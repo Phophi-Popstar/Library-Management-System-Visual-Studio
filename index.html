@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <title>Library Management System</title>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand"><i class="fas fa-book-open"></i>The Literary Nest</span>
+        <div class="search-form" id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search by Book, reader..." aria-label="Search">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i>Search</button>
+        </div>
+    </nav>
+
+    <div id="alertuser"></div>
+
+    <div class="container">
+        <!-- Welcome -->
+         <div class="welcome-card">
+            <h1><i class= "fas fa-landmark"></i>Library Desk</h1>
+            <span class="badge-count"><i class="fas fa-layer-group"></i><span id="bookCounter">0</span>books</span>
+         </div>
+        
+         <!-- Add Form -->
+          <div class="form-card">
+            <form id="mylibraryform">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="User-Name"><i class="fas fa-user"></i>Reader</label>
+                        <input type="text" class="form-control" id="User-Name" placeholder="e.g. Phophi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Book-Name"><i class="fas fa-book"></i>Book</label>
+                        <input type="text" class="form-control" id="Book-Name" placeholder="e.g. Dracula" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i>Genre</label>
+                        <div class="radio-group" id="bookTypeRadios">
+                            <label><input type="radio" name="check-box" value="Fiction" checked> Fiction</label>
+                            <label><input type="radio" name="check-box" value="Programming"> Programming</label>
+                            <label><input type="radio" name="check-box" value="Art"> Art</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="flex: 0 1 auto;">
+                        <button type="submit" class="button-add"><i class="fas fa-plus-circle"></i>Add Book</button>
+                    </div>
+
+                </div>
+            </form>
+          </div>
+
+          <!-- Table -->
+           <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date issued</th>
+                        <th>Reader</th>
+                        <th>Book</th>
+                        <th>Genre</th>
+                        <th style="text-align: right;">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table-body">
+                    <!-- Rows injected view js -->
+                </tbody>
+            </table>
+           </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
